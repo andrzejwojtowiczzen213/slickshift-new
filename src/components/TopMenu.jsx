@@ -14,7 +14,7 @@ const TopMenu = () => {
 
   return (
     <NavigationMenu className="w-full border-b">
-      <div className="flex h-16 items-center justify-between px-6 md:px-8">
+      <div className="flex h-16 items-center justify-between px-6 md:px-[200px]">
         {/* Logo */}
         <div className="text-xl font-bold">
           SlickShift
