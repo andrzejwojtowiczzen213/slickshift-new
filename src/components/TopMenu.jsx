@@ -14,14 +14,14 @@ const TopMenu = () => {
 
   return (
     <NavigationMenu className="w-full border-b">
-      <div className="flex h-16 items-center justify-between px-4">
+      <div className="flex h-16 items-center justify-between px-6 md:px-[200px]">
         {/* Logo */}
         <div className="text-xl font-bold">
           SlickShift
         </div>
 
         {/* Desktop Navigation */}
-        <NavigationMenuList className="hidden md:flex items-center space-x-4">
+        <NavigationMenuList className="hidden md:flex items-center space-x-6">
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
@@ -90,7 +90,7 @@ const TopMenu = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-3"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
@@ -103,25 +103,25 @@ const TopMenu = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden py-4 space-y-2">
+        <div className="md:hidden py-4 space-y-3">
           <a
             href="/"
-            className="block px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md"
+            className="block px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md"
           >
             Home
           </a>
-          <div className="px-4 py-2">
-            <div className="text-sm font-medium mb-2">Features</div>
-            <div className="pl-4 space-y-2">
+          <div className="px-6 py-3">
+            <div className="text-sm font-medium mb-3">Features</div>
+            <div className="pl-4 space-y-3">
               <a
                 href="/dashboard"
-                className="block text-sm hover:bg-accent hover:text-accent-foreground rounded-md px-2 py-1"
+                className="block text-sm hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-2"
               >
                 Dashboard
               </a>
               <a
                 href="/settings"
-                className="block text-sm hover:bg-accent hover:text-accent-foreground rounded-md px-2 py-1"
+                className="block text-sm hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-2"
               >
                 Settings
               </a>
@@ -129,7 +129,7 @@ const TopMenu = () => {
           </div>
           <a
             href="/about"
-            className="block px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md"
+            className="block px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md"
           >
             About
           </a>
