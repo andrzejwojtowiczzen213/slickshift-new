@@ -21,9 +21,7 @@ const TopMenu = () => {
         {/* Desktop Navigation */}
         <NavigationMenuList className="hidden md:flex items-center">
           <NavigationMenuItem>
-            <Button asChild>
-              <a href="/demo">Umów demo</a>
-            </Button>
+            <Button>Umów demo</Button>
           </NavigationMenuItem>
         </NavigationMenuList>
 
@@ -43,9 +41,7 @@ const TopMenu = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden py-4 space-y-3">
-          <Button asChild className="w-full">
-            <a href="/demo">Umów demo</a>
-          </Button>
+          <Button className="w-full">Umów demo</Button>
         </div>
       )}
     </NavigationMenu>
