@@ -6,7 +6,7 @@ import {
 } from "./ui/navigation-menu";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import logoSvg from '../assets/images/slickshift logo.svg';
+import logoSvg from '../assets/images/slickshift-logo.svg';
 import { DemoDialog } from "./DemoDialog";
 
 const TopMenu = () => {
