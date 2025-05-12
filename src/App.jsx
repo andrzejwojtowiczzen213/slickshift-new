@@ -7,6 +7,8 @@ import { Skeleton } from "./components/ui/skeleton"
 import TopMenu from './components/TopMenu'
 import { Send, Star, Eye, Route, Package, Activity } from 'lucide-react'
 import TollIcon from '@mui/icons-material/Toll'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
 
 function App() {
   const [message, setMessage] = useState('Którzy kierowcy są obecnie na trasie?')
