@@ -16,7 +16,7 @@ import recommendation1Image from './assets/images/Recommendation1.png'
 import recommendation2Image from './assets/images/Recommendation2.png'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
-import spedytorImage from './assets/images/spedytor.png'
+import spedytorImage from './assets/images/Spedytor.png'
 import kierowcaImage from './assets/images/kierowca.png'
 import cmr1Image from './assets/images/CMR1.jpg'
 import cmr2Image from './assets/images/CMR2.jpg'
