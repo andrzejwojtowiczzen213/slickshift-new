@@ -9,6 +9,22 @@ import TollIcon from '@mui/icons-material/Toll'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
 
+// Import images
+import nadzorTrasImg from './assets/images/nadzor-tras.png'
+import centralizacjaKomunikacjiImg from './assets/images/centralizacja-komunikacji.png'
+import logoImg from './assets/images/slickshift-logo.svg'
+import blackOrangeImg from './assets/images/black-orange.png'
+import kaemTransportImg from './assets/images/kaem-transport.png'
+import recommendation1Img from './assets/images/recommendation1.png'
+import recommendation2Img from './assets/images/recommendation2.png'
+import spedytorImg from './assets/images/spedytor.png'
+import kierowcaImg from './assets/images/kierowca.png'
+import cmr1Img from './assets/images/CMR1.jpg'
+import cmr2Img from './assets/images/CMR2.jpg'
+import cmr3Img from './assets/images/CMR3.jpg'
+import cmr4Img from './assets/images/CMR4.jpg'
+import cmr5Img from './assets/images/CMR5.jpg'
+
 interface Images {
   nadzorTras: string;
   centralizacjaKomunikacji: string;
@@ -33,20 +49,20 @@ const App: React.FC = () => {
 
   // Images
   const images: Images = {
-    nadzorTras: '/assets/images/nadzor-tras.png',
-    centralizacjaKomunikacji: '/assets/images/centralizacja-komunikacji.png',
-    logo: '/assets/images/slickshift-logo.svg',
-    blackOrange: '/assets/images/black-orange.png',
-    kaemTransport: '/assets/images/kaem-transport.png',
-    recommendation1: '/assets/images/recommendation1.png',
-    recommendation2: '/assets/images/recommendation2.png',
-    spedytor: '/assets/images/spedytor.png',
-    kierowca: '/assets/images/kierowca.png',
-    cmr1: '/assets/images/CMR1.jpg',
-    cmr2: '/assets/images/CMR2.jpg',
-    cmr3: '/assets/images/CMR3.jpg',
-    cmr4: '/assets/images/CMR4.jpg',
-    cmr5: '/assets/images/CMR5.jpg'
+    nadzorTras: nadzorTrasImg,
+    centralizacjaKomunikacji: centralizacjaKomunikacjiImg,
+    logo: logoImg,
+    blackOrange: blackOrangeImg,
+    kaemTransport: kaemTransportImg,
+    recommendation1: recommendation1Img,
+    recommendation2: recommendation2Img,
+    spedytor: spedytorImg,
+    kierowca: kierowcaImg,
+    cmr1: cmr1Img,
+    cmr2: cmr2Img,
+    cmr3: cmr3Img,
+    cmr4: cmr4Img,
+    cmr5: cmr5Img
   }
 
   // Focus textarea when Asystent AI tab is active
