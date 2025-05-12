@@ -7,28 +7,30 @@ import { Skeleton } from "./components/ui/skeleton"
 import TopMenu from './components/TopMenu'
 import { Send, Star, Eye, Route, Package, Activity } from 'lucide-react'
 import TollIcon from '@mui/icons-material/Toll'
-import nadzorTrasImage from './assets/images/nadzor-tras.png'
-import centralizacjaKomunikacjiImage from './assets/images/centralizacja-komunikacji.png'
-import logoSvg from './assets/images/slickshift-logo.svg'
-import blackOrangeLogo from './assets/images/black-orange.png'
-import kaemTransportLogo from './assets/images/kaem-transport.png'
-import recommendation1Image from './assets/images/recommendation1.png'
-import recommendation2Image from './assets/images/recommendation2.png'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
-import spedytorImage from './assets/images/spedytor.png'
-import kierowcaImage from './assets/images/kierowca.png'
-import cmr1Image from './assets/images/CMR1.jpg'
-import cmr2Image from './assets/images/CMR2.jpg'
-import cmr3Image from './assets/images/CMR3.jpg'
-import cmr4Image from './assets/images/CMR4.jpg'
-import cmr5Image from './assets/images/CMR5.jpg'
 
 function App() {
   const [message, setMessage] = useState('Którzy kierowcy są obecnie na trasie?')
   const [activeTab, setActiveTab] = useState('ai')
   const [isLoading, setIsLoading] = useState(true)
   const textareaRef = useRef(null)
+
+  // Images
+  const images = {
+    nadzorTras: '/assets/images/nadzor-tras.png',
+    centralizacjaKomunikacji: '/assets/images/centralizacja-komunikacji.png',
+    logo: '/assets/images/slickshift-logo.svg',
+    blackOrange: '/assets/images/black-orange.png',
+    kaemTransport: '/assets/images/kaem-transport.png',
+    recommendation1: '/assets/images/recommendation1.png',
+    recommendation2: '/assets/images/recommendation2.png',
+    spedytor: '/assets/images/spedytor.png',
+    kierowca: '/assets/images/kierowca.png',
+    cmr1: '/assets/images/CMR1.jpg',
+    cmr2: '/assets/images/CMR2.jpg',
+    cmr3: '/assets/images/CMR3.jpg',
+    cmr4: '/assets/images/CMR4.jpg',
+    cmr5: '/assets/images/CMR5.jpg'
+  }
 
   // Focus textarea when Asystent AI tab is active
   useEffect(() => {
@@ -101,13 +103,13 @@ function App() {
       <div className="min-h-screen w-full bg-gradient-to-b from-purple-50/40 via-purple-100/40 to-purple-50/40 relative">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjM1Ii8+PC9zdmc+')] opacity-100 pointer-events-none z-0"></div>
         <img
-          src={spedytorImage}
+          src={images.spedytor}
           alt=""
           className="hidden"
           style={{ opacity: 0.95 }}
         />
         <img
-          src={kierowcaImage}
+          src={images.kierowca}
           alt=""
           className="hidden"
           style={{ opacity: 0.95 }}
@@ -152,7 +154,7 @@ function App() {
               
               {activeTab === 'monitoring' ? (
                 <div className="max-w-[800px] mx-auto mt-16 h-[420px]">
-                  <img src={nadzorTrasImage} alt="Nadzór tras" className="w-full rounded-lg h-full object-cover" />
+                  <img src={images.nadzorTras} alt="Nadzór tras" className="w-full rounded-lg h-full object-cover" />
                 </div>
               ) : activeTab === 'routes' ? (
                 <div className="max-w-[800px] mx-auto mt-16 h-[420px] overflow-y-auto">
@@ -310,7 +312,7 @@ function App() {
                 </div>
               ) : activeTab === 'deliveries' ? (
                 <div className="max-w-[800px] mx-auto mt-16 h-[420px]">
-                  <img src={centralizacjaKomunikacjiImage} alt="Centralizacja komunikacji" className="w-full rounded-lg h-full object-cover" />
+                  <img src={images.centralizacjaKomunikacji} alt="Centralizacja komunikacji" className="w-full rounded-lg h-full object-cover" />
                 </div>
               ) : activeTab === 'status' ? (
                 <div className="max-w-[800px] mx-auto mt-16 h-[420px] overflow-auto">
@@ -334,7 +336,7 @@ function App() {
                           <td className="px-4 py-3 text-sm text-left text-gray-900">09.05.2025 10:51</td>
                           <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
                           <td className="px-4 py-3 text-left">
-                            <img src={cmr1Image} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
+                            <img src={images.cmr1} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
                           </td>
                         </tr>
                         <tr className="hover:bg-gray-50">
@@ -344,7 +346,7 @@ function App() {
                           <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 14:39</td>
                           <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
                           <td className="px-4 py-3 text-left">
-                            <img src={cmr2Image} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
+                            <img src={images.cmr2} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
                           </td>
                         </tr>
                         <tr className="hover:bg-gray-50">
@@ -354,7 +356,7 @@ function App() {
                           <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 12:15</td>
                           <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
                           <td className="px-4 py-3 text-left">
-                            <img src={cmr3Image} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
+                            <img src={images.cmr3} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
                           </td>
                         </tr>
                         <tr className="hover:bg-gray-50">
@@ -364,7 +366,7 @@ function App() {
                           <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 09:30</td>
                           <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
                           <td className="px-4 py-3 text-left">
-                            <img src={cmr4Image} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
+                            <img src={images.cmr4} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
                           </td>
                         </tr>
                         <tr className="hover:bg-gray-50">
@@ -374,7 +376,7 @@ function App() {
                           <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 08:45</td>
                           <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
                           <td className="px-4 py-3 text-left">
-                            <img src={cmr5Image} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
+                            <img src={images.cmr5} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
                           </td>
                         </tr>
                       </tbody>
@@ -464,7 +466,7 @@ function App() {
                     <CarouselItem>
                       <div className="p-4 bg-white rounded-lg shadow-sm">
                         <div className="flex gap-6">
-                          <img src={recommendation1Image} alt="Recommendation" className="h-20 w-20 object-cover rounded-lg" />
+                          <img src={images.recommendation1} alt="Recommendation" className="h-20 w-20 object-cover rounded-lg" />
                           <div className="flex flex-col h-full">
                             <p className="text-base text-gray-600 mb-2 italic">Asystent Slick odciąża nasz zespół – automatyzuje śledzenie tras i porządkuje komunikację. Ogromne ułatwienie na co dzień!</p>
                             <div className="mt-auto">
@@ -473,7 +475,7 @@ function App() {
                                   <p className="text-sm font-medium">Janek Piątkowski</p>
                                   <p className="text-sm text-gray-500">Spedytor</p>
                                 </div>
-                                <img src={blackOrangeLogo} alt="Black-Orange Logo" className="h-5 mt-1" />
+                                <img src={images.blackOrange} alt="Black-Orange Logo" className="h-5 mt-1" />
                               </div>
                             </div>
                           </div>
@@ -483,7 +485,7 @@ function App() {
                     <CarouselItem>
                       <div className="p-4 bg-white rounded-lg shadow-sm">
                         <div className="flex gap-6">
-                          <img src={recommendation2Image} alt="Recommendation" className="h-20 w-20 object-cover rounded-lg" />
+                          <img src={images.recommendation2} alt="Recommendation" className="h-20 w-20 object-cover rounded-lg" />
                           <div className="flex flex-col h-full">
                             <p className="text-base text-gray-600 mb-2 italic">Skupienie rozmów, map i nadzoru nad wykonaniem trasy dzięki asystentowi Slick jest największą wartością.</p>
                             <div className="mt-auto">
@@ -492,7 +494,7 @@ function App() {
                                   <p className="text-sm font-medium">Michał Konpka</p>
                                   <p className="text-sm text-gray-500">Kierownik firmy transportowej</p>
                                 </div>
-                                <img src={kaemTransportLogo} alt="KAEM Transport Logo" className="h-5 mt-1" />
+                                <img src={images.kaemTransport} alt="KAEM Transport Logo" className="h-5 mt-1" />
                               </div>
                             </div>
                           </div>
@@ -547,7 +549,7 @@ function App() {
         </div>
         <footer className="w-full border-t border-200 mt-16 py-8 bg-transparent">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-            <img src={logoSvg} alt="Slickshift Logo" className="h-5 mr-4" />
+            <img src={images.logo} alt="Slickshift Logo" className="h-5 mr-4" />
             <div className="text-xs text-gray-500 text-center md:text-right">
               Kontakt: <a href="mailto:alex@slickshift.ai" className="underline">alex@slickshift.ai</a>
               <br />

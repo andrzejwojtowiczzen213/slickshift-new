@@ -6,7 +6,6 @@ import {
 } from "./ui/navigation-menu";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import logoSvg from '../assets/images/slickshift-logo.svg';
 import { DemoDialog } from "./DemoDialog";
 
 const TopMenu = () => {
@@ -33,7 +32,7 @@ const TopMenu = () => {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <img src={logoSvg} alt="SlickShift Logo" className="h-[28px]" />
+          <img src="/assets/images/slickshift-logo.svg" alt="SlickShift Logo" className="h-[28px]" />
           <div className="hidden md:flex items-center gap-6">
             <Button variant="outline">Rozwiązania</Button>
             <DemoDialog />
