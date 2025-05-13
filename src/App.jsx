@@ -9,12 +9,21 @@ import { Send, Star, Eye, Route, Package, Activity } from 'lucide-react'
 import TollIcon from '@mui/icons-material/Toll'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
+import { cn } from "./lib/utils"
 
 function App() {
-  const [message, setMessage] = useState('Którzy kierowcy są obecnie na trasie?')
+  const [message, setMessage] = useState('Opłaty drogowe na trasie Kraków - Wiedeń')
   const [activeTab, setActiveTab] = useState('ai')
   const [isLoading, setIsLoading] = useState(true)
   const textareaRef = useRef(null)
+
+  const buttonMessages = {
+    tolls: 'Opłaty drogowe na trasie Kraków - Wiedeń',
+    documents: 'Pokaż dokumenty transportowe z poprzedniego tygodnia',
+    fuel: 'Zrób podsumowanie tankowań z tego miesiąca',
+    delivery: 'Sprawdź status dostawy',
+    schedule: 'Pokaż harmonogram kierowców'
+  }
 
   // Images
   const images = {
@@ -49,11 +58,18 @@ function App() {
     return () => clearTimeout(timer)
   }, [])
 
+  const handleMessageChange = (e) => {
+    if (typeof e === 'string') {
+      setMessage(e)
+    } else if (e?.target?.value !== undefined) {
+      setMessage(e.target.value)
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     // Handle message submission here
     console.log('Message:', message)
-    setMessage('')
   }
 
   const FleetCardSkeleton = () => (
@@ -102,7 +118,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-b from-purple-50/40 via-purple-100/40 to-purple-50/40 relative">
+      <div className="min-h-screen w-full bg-gradient-to-b from-gray-50/40 via-purple-50/40 to-gray-50/40 relative">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjM1Ii8+PC9zdmc+')] opacity-100 pointer-events-none z-0"></div>
         <img
           src={images.spedytor}
@@ -120,10 +136,10 @@ function App() {
           <TopMenu />
           <main className="container mx-auto px-4 py-8 pt-24">
             <div className="pt-[96px] text-center">
-              <h1 className="font-satoshi font-semibold text-[48px] text-black whitespace-nowrap mb-3">
+              <h1 className="font-semibold text-[48px] text-black whitespace-nowrap mb-1 title-spacing">
                 Narzędzie dla spedytorów i dyspozytorów
               </h1>
-              <p className="font-satoshi font-medium text-[20px] text-black whitespace-nowrap mb-8">
+              <p className="font-medium text-[20px] text-black whitespace-nowrap mb-8 title-spacing">
                 Automatyzuj nadzór nad transportem i zmniejsz koszty operacyjne dzięki sztucznej inteligencji.
               </p>
               
@@ -392,8 +408,13 @@ function App() {
                       <Textarea
                         ref={textareaRef}
                         value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={(e) => {
+                          console.log('Textarea onChange event:', e.target.value)
+                          handleMessageChange(e.target.value)
+                        }}
+                        onFocus={() => console.log('Textarea focused, current value:', message)}
                         className="flex-1 min-h-[240px] resize-none pr-12"
+                        placeholder="Wpisz pytanie lub wybierz z podpowiedzi poniżej..."
                       />
                       <div className="absolute bottom-4 right-4">
                         <Button type="submit" size="sm" className="gap-2">
@@ -403,45 +424,63 @@ function App() {
                       </div>
                     </div>
 
-                    {activeTab === 'ai' && (
-                      <div className="flex flex-wrap justify-center gap-2 mt-4">
-                        <Badge 
-                          variant="outline" 
-                          className="cursor-pointer hover:bg-secondary"
-                          onClick={() => setMessage('Opłaty drogowe na trasie Kraków - Wiedeń')}
-                        >
-                          Opłaty drogowe na trasie...
-                        </Badge>
-                        <Badge 
-                          variant="outline" 
-                          className="cursor-pointer hover:bg-secondary"
-                          onClick={() => setMessage('Pokaż dokumenty transportowe z poprzedniego tygodnia')}
-                        >
-                          Pokaż dokumenty transportowe...
-                        </Badge>
-                        <Badge 
-                          variant="outline" 
-                          className="cursor-pointer hover:bg-secondary"
-                          onClick={() => setMessage('Zrób podsumowanie tankowań z tego miesiąca')}
-                        >
-                          Zrób podsumowanie tankowań...
-                        </Badge>
-                        <Badge 
-                          variant="outline" 
-                          className="cursor-pointer hover:bg-secondary"
-                          onClick={() => setMessage('Sprawdź status dostawy...')}
-                        >
-                          Sprawdź status dostawy...
-                        </Badge>
-                        <Badge 
-                          variant="outline" 
-                          className="cursor-pointer hover:bg-secondary"
-                          onClick={() => setMessage('Pokaż harmonogram kierowców...')}
-                        >
-                          Pokaż harmonogram kierowców...
-                        </Badge>
-                      </div>
-                    )}
+                    <div className="flex flex-wrap justify-center gap-2 mt-4">
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        className={cn(
+                          "rounded-full transition-all border-gray-200",
+                          message === buttonMessages.tolls && "border-black"
+                        )}
+                        onClick={() => handleMessageChange(buttonMessages.tolls)}
+                      >
+                        Opłaty drogowe na trasie...
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        className={cn(
+                          "rounded-full transition-all border-gray-200",
+                          message === buttonMessages.documents && "border-black"
+                        )}
+                        onClick={() => handleMessageChange(buttonMessages.documents)}
+                      >
+                        Pokaż dokumenty transportowe...
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        className={cn(
+                          "rounded-full transition-all border-gray-200",
+                          message === buttonMessages.fuel && "border-black"
+                        )}
+                        onClick={() => handleMessageChange(buttonMessages.fuel)}
+                      >
+                        Zrób podsumowanie tankowań...
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        className={cn(
+                          "rounded-full transition-all border-gray-200",
+                          message === buttonMessages.delivery && "border-black"
+                        )}
+                        onClick={() => handleMessageChange(buttonMessages.delivery)}
+                      >
+                        Sprawdź status dostawy
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        className={cn(
+                          "rounded-full transition-all border-gray-200",
+                          message === buttonMessages.schedule && "border-black"
+                        )}
+                        onClick={() => handleMessageChange(buttonMessages.schedule)}
+                      >
+                        Pokaż harmonogram kierowców
+                      </Button>
+                    </div>
                   </form>
                 </div>
               )}
@@ -450,7 +489,7 @@ function App() {
 
           <div className="max-w-[800px] mx-auto mt-16 mb-32">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-semibold">Realne wyniki, konkretne oszczędności</h2>
+              <h2 className="text-2xl font-semibold title-spacing">Realne wyniki, konkretne oszczędności</h2>
             </div>
             <Carousel className="w-full">
               <CarouselContent>
@@ -513,7 +552,7 @@ function App() {
 
           <div className="max-w-[800px] mx-auto mt-16 mb-32">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-semibold">Najczęściej zadawane pytania</h2>
+              <h2 className="text-2xl font-semibold title-spacing">Najczęściej zadawane pytania</h2>
             </div>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">

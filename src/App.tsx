@@ -99,10 +99,10 @@ const App: React.FC = () => {
           <TopMenu />
           <main className="container mx-auto px-4 py-8 pt-24">
             <div className="pt-[96px] text-center">
-              <h1 className="font-satoshi font-semibold text-[48px] text-black whitespace-nowrap mb-3">
+              <h1 className="font-semibold text-[48px] text-black whitespace-nowrap mb-3">
                 Narzędzie dla spedytorów i dyspozytorów
               </h1>
-              <p className="font-satoshi font-medium text-[20px] text-black whitespace-nowrap mb-8">
+              <p className="font-medium text-[20px] text-black whitespace-nowrap mb-8">
                 Automatyzuj nadzór nad transportem i zmniejsz koszty operacyjne dzięki sztucznej inteligencji.
               </p>
               
