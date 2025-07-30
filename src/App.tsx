@@ -107,36 +107,30 @@ const App: React.FC = () => {
               </p>
               
               <div className="flex justify-center mb-12">
-                <Tabs defaultValue="ai" className="w-auto" onValueChange={setActiveTab}>
+                <Tabs defaultValue="monitoring" className="w-auto" onValueChange={setActiveTab}>
                   <TabsList className="gap-2">
-                    <TabsTrigger value="ai">
-                      <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[20px]">stars_2</span>
-                        Asystent AI
-                      </div>
-                    </TabsTrigger>
                     <TabsTrigger value="monitoring">
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[20px]">conversion_path</span>
-                        Nadzór trasy
+                      <span className="material-symbols-outlined text-[20px]">conversion_path</span>
+                      Nadzór trasy
                       </div>
                     </TabsTrigger>
                     <TabsTrigger value="routes">
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[20px]">local_shipping</span>
-                        Status floty
+                      <span className="material-symbols-outlined text-[20px]">local_shipping</span>
+                      Status floty
                       </div>
                     </TabsTrigger>
                     <TabsTrigger value="deliveries">
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[20px]">forum</span>
-                        Centralizacja komunikacji
+                      <span className="material-symbols-outlined text-[20px]">forum</span>
+                      Centralizacja komunikacji
                       </div>
                     </TabsTrigger>
                     <TabsTrigger value="status">
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[20px]">description</span>
-                        Zarządzanie CMR
+                      <span className="material-symbols-outlined text-[20px]">description</span>
+                      Zarządzanie CMR
                       </div>
                     </TabsTrigger>
                   </TabsList>
@@ -156,4 +150,4 @@ const App: React.FC = () => {
   )
 }
 
-export default App 
+export default App

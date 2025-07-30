@@ -68,12 +68,6 @@ const TopMenu = () => {
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4">
                       <ListItem
-                        title="Asystent AI"
-                        href="/asystent-ai"
-                      >
-                        Inteligentny asystent wspierający pracę spedytora i automatyzujący rutynowe zadania.
-                      </ListItem>
-                      <ListItem
                         title="Nadzór trasy"
                         href="/nadzor-trasy"
                       >

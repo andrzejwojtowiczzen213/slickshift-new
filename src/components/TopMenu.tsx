@@ -126,14 +126,14 @@ const TopMenu: React.FC = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(!isOpen)}
               className="relative"
-            >
+          >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
-      </div>
+          </div>
     </div>
   )
 }

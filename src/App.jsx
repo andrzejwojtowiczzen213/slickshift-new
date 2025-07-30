@@ -5,15 +5,16 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/ui/tabs"
 import { Badge } from "./components/ui/badge"
 import { Skeleton } from "./components/ui/skeleton"
 import TopMenu from './components/TopMenu'
-import { Send, Star, Eye, Route, Package, Activity } from 'lucide-react'
+import { Send, Star, Eye, Route, Package, Activity, ArrowRight, Sparkles } from 'lucide-react'
 import TollIcon from '@mui/icons-material/Toll'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
 import { cn } from "./lib/utils"
+import LottieAnimation from "./components/LottieAnimation";
 
 function App() {
   const [message, setMessage] = useState('Opłaty drogowe na trasie Kraków - Wiedeń')
-  const [activeTab, setActiveTab] = useState('ai')
+  const [activeTab, setActiveTab] = useState('monitoring')
   const [isLoading, setIsLoading] = useState(true)
   const textareaRef = useRef(null)
 
@@ -28,7 +29,7 @@ function App() {
   // Images
   const images = {
     nadzorTras: '/assets/images/nadzor-tras.png',
-    centralizacjaKomunikacji: '/assets/images/centralizacja-komunikacji.png',
+    centralizacjaKomunikacji: '/assets/images/centralizacja-komunikacji2.png',
     logo: '/assets/images/slickshift-logo.svg',
     blackOrange: '/assets/images/black-orange.png',
     kaemTransport: '/assets/images/kaem-transport.png',
@@ -136,6 +137,16 @@ function App() {
           <TopMenu />
           <main className="container mx-auto px-4 py-8 pt-24">
             <div className="pt-[96px] text-center">
+              <div className="flex justify-center mb-6">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border border-violet-400 bg-violet-100 rounded-full text-violet-950 hover:bg-violet-200 hover:border-violet-600 flex items-center gap-2 w-auto px-6 h-8"
+                >
+                  <span className="text-violet-950">Wypróbuj funkcje AI</span>
+                  <Sparkles className="ml-2 w-5 h-5 text-violet-950" strokeWidth={1.25} />
+                </Button>
+              </div>
               <h1 className="font-semibold text-[48px] text-black whitespace-nowrap mb-1 title-spacing">
                 Narzędzie dla spedytorów i dyspozytorów
               </h1>
@@ -144,12 +155,8 @@ function App() {
               </p>
               
               <div className="flex justify-center mb-12">
-                <Tabs defaultValue="ai" className="inline-flex" onValueChange={setActiveTab}>
+                <Tabs defaultValue="monitoring" className="inline-flex" onValueChange={setActiveTab}>
                   <TabsList className="flex justify-between p-1 h-12 bg-transparent gap-4">
-                    <TabsTrigger value="ai" className="flex items-center gap-2 whitespace-nowrap h-10 text-muted-foreground data-[state=active]:text-foreground">
-                      <span className="material-symbols-outlined text-[20px]">stars_2</span>
-                      Asystent AI
-                    </TabsTrigger>
                     <TabsTrigger value="monitoring" className="flex items-center gap-2 whitespace-nowrap h-10 text-muted-foreground data-[state=active]:text-foreground">
                       <span className="material-symbols-outlined text-[20px]">conversion_path</span>
                       Nadzór trasy
@@ -171,8 +178,10 @@ function App() {
               </div>
               
               {activeTab === 'monitoring' ? (
-                <div className="max-w-[800px] mx-auto mt-16 h-[420px]">
-                  <img src={images.nadzorTras} alt="Nadzór tras" className="w-full rounded-lg h-full object-cover" />
+                <div style={{ marginTop: '50px' }} className="flex justify-center items-center mx-auto w-full max-w-6xl min-h-[640px] max-h-[1200px]">
+                  <div className="w-full h-full flex items-center justify-center rounded-2xl shadow-lg bg-white overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200 }}>
+                    <LottieAnimation style={{ width: '100%', height: '100%' }} />
+                  </div>
                 </div>
               ) : activeTab === 'routes' ? (
                 <div className="max-w-[800px] mx-auto mt-16 h-[420px] overflow-y-auto">
@@ -188,7 +197,7 @@ function App() {
                       </>
                     ) : (
                       <>
-                        <div className="bg-white rounded-lg shadow-sm p-4 border border-black" style={{ borderWidth: '0.8px' }}>
+                        <div className="bg-white rounded-lg shadow-sm p-4">
                           <div className="mb-4 flex justify-between items-center">
                             <h3 className="text-lg font-semibold">Jan Kowalski</h3>
                             <span className="text-sm font-medium text-green-700">Na trasie</span>
@@ -212,7 +221,7 @@ function App() {
                           </div>
                         </div>
 
-                        <div className="bg-white rounded-lg shadow-sm p-4 border border-black" style={{ borderWidth: '0.8px' }}>
+                        <div className="bg-white rounded-lg shadow-sm p-4">
                           <div className="mb-4 flex justify-between items-center">
                             <h3 className="text-lg font-semibold">Piotr Nowak</h3>
                             <span className="text-sm font-medium text-green-700">Na trasie</span>
@@ -236,7 +245,7 @@ function App() {
                           </div>
                         </div>
 
-                        <div className="bg-white rounded-lg shadow-sm p-4 border border-black" style={{ borderWidth: '0.8px' }}>
+                        <div className="bg-white rounded-lg shadow-sm p-4">
                           <div className="mb-4 flex justify-between items-center">
                             <h3 className="text-lg font-semibold">Maciej Zieliński</h3>
                             <span className="text-sm font-medium text-green-700">Na trasie</span>
@@ -260,7 +269,7 @@ function App() {
                           </div>
                         </div>
 
-                        <div className="bg-white rounded-lg shadow-sm p-4 flex flex-col h-full border border-black" style={{ borderWidth: '0.8px' }}>
+                        <div className="bg-white rounded-lg shadow-sm p-4 flex flex-col h-full">
                           <div className="mb-4">
                             <h3 className="text-lg font-semibold text-left">Marek Dąbek</h3>
                           </div>
@@ -277,7 +286,7 @@ function App() {
                           </div>
                         </div>
 
-                        <div className="bg-white rounded-lg shadow-sm p-4 border border-black" style={{ borderWidth: '0.8px' }}>
+                        <div className="bg-white rounded-lg shadow-sm p-4">
                           <div className="mb-4 flex justify-between items-center">
                             <h3 className="text-lg font-semibold">Tomasz Soboń</h3>
                             <span className="text-sm font-medium text-green-700">Na trasie</span>
@@ -301,7 +310,7 @@ function App() {
                           </div>
                         </div>
 
-                        <div className="bg-white rounded-lg shadow-sm p-4 border border-black" style={{ borderWidth: '0.8px' }}>
+                        <div className="bg-white rounded-lg shadow-sm p-4">
                           <div className="mb-4 flex justify-between items-center">
                             <h3 className="text-lg font-semibold">Karol Osiak</h3>
                             <span className="text-sm font-medium text-red-700">Poza trasą</span>
@@ -531,7 +540,7 @@ function App() {
                             <p className="text-base text-gray-600 mb-2 italic">Skupienie rozmów, map i nadzoru nad wykonaniem trasy dzięki asystentowi Slick jest największą wartością.</p>
                             <div className="mt-auto">
                               <div className="flex items-center justify-between">
-                                <div>
+      <div>
                                   <p className="text-sm font-medium">Michał Konpka</p>
                                   <p className="text-sm text-gray-500">Kierownik firmy transportowej</p>
                                 </div>
@@ -596,7 +605,7 @@ function App() {
               <br />
               &copy; {new Date().getFullYear()} Slickshift. Wszelkie prawa zastrzeżone.
             </div>
-          </div>
+      </div>
         </footer>
       </div>
     </>
