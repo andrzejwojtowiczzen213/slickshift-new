@@ -119,8 +119,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-b from-gray-50/40 via-purple-50/40 to-gray-50/40 relative">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjM1Ii8+PC9zdmc+')] opacity-100 pointer-events-none z-0"></div>
+      <div className="min-h-screen w-full bg-[#F5F5F5] relative">
         <img
           src={images.spedytor}
           alt=""
@@ -138,14 +137,14 @@ function App() {
           <main className="container mx-auto px-4 py-8 pt-24">
             <div className="pt-[96px] text-center">
               <div className="flex justify-center mb-6">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border border-violet-400 bg-violet-100 rounded-full text-violet-950 hover:bg-violet-200 hover:border-violet-600 flex items-center gap-2 w-auto px-6 h-8"
-                >
-                  <span className="text-violet-950">Wypróbuj funkcje AI</span>
-                  <Sparkles className="ml-2 w-5 h-5 text-violet-950" strokeWidth={1.25} />
-                </Button>
+                                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border border-violet-400 bg-violet-100 rounded-full text-violet-950 hover:bg-violet-200 hover:border-violet-600 flex items-center gap-2 w-auto px-6 h-8"
+                    >
+                      <span className="text-violet-950">Wypróbuj funkcje AI</span>
+                      <Sparkles className="ml-2 w-5 h-5 text-violet-950" strokeWidth={1.25} />
+                    </Button>
               </div>
               <h1 className="font-semibold text-[48px] text-black whitespace-nowrap mb-1 title-spacing">
                 Narzędzie dla spedytorów i dyspozytorów
@@ -184,157 +183,9 @@ function App() {
                   </div>
                 </div>
               ) : activeTab === 'routes' ? (
-                <div className="max-w-[800px] mx-auto mt-16 h-[420px] overflow-y-auto">
-                  <div className="grid grid-cols-3 gap-4">
-                    {isLoading ? (
-                      <>
-                        <FleetCardSkeleton />
-                        <FleetCardSkeleton />
-                        <FleetCardSkeleton />
-                        <FleetCardSkeleton />
-                        <FleetCardSkeleton />
-                        <FleetCardSkeleton />
-                      </>
-                    ) : (
-                      <>
-                        <div className="bg-white rounded-lg shadow-sm p-4">
-                          <div className="mb-4 flex justify-between items-center">
-                            <h3 className="text-lg font-semibold">Jan Kowalski</h3>
-                            <span className="text-sm font-medium text-green-700">Na trasie</span>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center mt-2">
-                              <span className="text-sm text-gray-600">Cel</span>
-                              <span className="text-sm font-medium">Bydgoszcz</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Przyjazd</span>
-                              <span className="text-sm font-medium">9 Maj 12:45</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Pozostało</span>
-                              <span className="text-sm font-medium">100 km (20%)</span>
-                            </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2" style={{ marginTop: '26px' }}>
-                              <div className="bg-green-700 h-2 rounded-full" style={{ width: '20%' }}></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-white rounded-lg shadow-sm p-4">
-                          <div className="mb-4 flex justify-between items-center">
-                            <h3 className="text-lg font-semibold">Piotr Nowak</h3>
-                            <span className="text-sm font-medium text-green-700">Na trasie</span>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center mt-2">
-                              <span className="text-sm text-gray-600">Cel</span>
-                              <span className="text-sm font-medium">Warszawa</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Przyjazd</span>
-                              <span className="text-sm font-medium">9 Maj 15:30</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Pozostało</span>
-                              <span className="text-sm font-medium">320 km (55%)</span>
-                            </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2" style={{ marginTop: '26px' }}>
-                              <div className="bg-green-700 h-2 rounded-full" style={{ width: '55%' }}></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-white rounded-lg shadow-sm p-4">
-                          <div className="mb-4 flex justify-between items-center">
-                            <h3 className="text-lg font-semibold">Maciej Zieliński</h3>
-                            <span className="text-sm font-medium text-green-700">Na trasie</span>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center mt-2">
-                              <span className="text-sm text-gray-600">Cel</span>
-                              <span className="text-sm font-medium">Poznań</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Przyjazd</span>
-                              <span className="text-sm font-medium">9 Maj 18:15</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Pozostało</span>
-                              <span className="text-sm font-medium">420 km (70%)</span>
-                            </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2" style={{ marginTop: '26px' }}>
-                              <div className="bg-green-700 h-2 rounded-full" style={{ width: '70%' }}></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-white rounded-lg shadow-sm p-4 flex flex-col h-full">
-                          <div className="mb-4">
-                            <h3 className="text-lg font-semibold text-left">Marek Dąbek</h3>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Lokalizacja</span>
-                              <span className="text-sm font-medium">Gdańsk</span>
-                            </div>
-                          </div>
-                          <div className="mt-auto pt-12">
-                            <div className="w-full bg-gray-200 rounded-full h-2">
-                              <div className="bg-gray-300 h-2 rounded-full" style={{ width: '100%' }}></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-white rounded-lg shadow-sm p-4">
-                          <div className="mb-4 flex justify-between items-center">
-                            <h3 className="text-lg font-semibold">Tomasz Soboń</h3>
-                            <span className="text-sm font-medium text-green-700">Na trasie</span>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center mt-2">
-                              <span className="text-sm text-gray-600">Cel</span>
-                              <span className="text-sm font-medium">Drezno</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Przyjazd</span>
-                              <span className="text-sm font-medium">9 Maj 22:15</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Pozostało</span>
-                              <span className="text-sm font-medium">150 km (55%)</span>
-                            </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2" style={{ marginTop: '26px' }}>
-                              <div className="bg-green-700 h-2 rounded-full" style={{ width: '55%' }}></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-white rounded-lg shadow-sm p-4">
-                          <div className="mb-4 flex justify-between items-center">
-                            <h3 className="text-lg font-semibold">Karol Osiak</h3>
-                            <span className="text-sm font-medium text-red-700">Poza trasą</span>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center mt-2">
-                              <span className="text-sm text-gray-600">Cel</span>
-                              <span className="text-sm font-medium">Bratysława</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Przyjazd</span>
-                              <span className="text-sm font-medium">10 Maj 01:30</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-gray-600">Pozostało</span>
-                              <span className="text-sm font-medium">280 km (40%)</span>
-                            </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2" style={{ marginTop: '26px' }}>
-                              <div className="bg-red-700 h-2 rounded-full" style={{ width: '40%' }}></div>
-                            </div>
-                          </div>
-                        </div>
-                      </>
-                    )}
+                <div style={{ marginTop: '50px' }} className="flex justify-center items-center mx-auto w-full max-w-6xl min-h-[640px] max-h-[1200px]">
+                  <div className="w-full h-full flex items-center justify-center rounded-2xl shadow-lg bg-white overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200 }}>
+                    <LottieAnimation section="section2" style={{ width: '100%', height: '100%' }} />
                   </div>
                 </div>
               ) : activeTab === 'deliveries' ? (
