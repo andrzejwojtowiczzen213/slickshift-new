@@ -119,7 +119,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-[#F5F5F5] relative">
+              <div className="min-h-screen w-full bg-[#EBEBEB] relative">
         <img
           src={images.spedytor}
           alt=""
@@ -178,19 +178,21 @@ function App() {
               
               {activeTab === 'monitoring' ? (
                 <div style={{ marginTop: '50px' }} className="flex justify-center items-center mx-auto w-full max-w-6xl min-h-[640px] max-h-[1200px]">
-                  <div className="w-full h-full flex items-center justify-center rounded-2xl shadow-lg bg-white overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200 }}>
+                  <div className="w-full h-full flex items-center justify-center bg-white overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200, borderRadius: '14px' }}>
                     <LottieAnimation style={{ width: '100%', height: '100%' }} />
                   </div>
                 </div>
               ) : activeTab === 'routes' ? (
                 <div style={{ marginTop: '50px' }} className="flex justify-center items-center mx-auto w-full max-w-6xl min-h-[640px] max-h-[1200px]">
-                  <div className="w-full h-full flex items-center justify-center rounded-2xl shadow-lg bg-white overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200 }}>
+                  <div className="w-full h-full flex items-center justify-center bg-white overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200, borderRadius: '14px' }}>
                     <LottieAnimation section="section2" style={{ width: '100%', height: '100%' }} />
                   </div>
                 </div>
               ) : activeTab === 'deliveries' ? (
-                <div className="max-w-[800px] mx-auto mt-16 h-[420px]">
-                  <img src={images.centralizacjaKomunikacji} alt="Centralizacja komunikacji" className="w-full rounded-lg h-full object-cover" />
+                <div style={{ marginTop: '50px' }} className="flex justify-center items-center mx-auto w-full max-w-6xl min-h-[640px] max-h-[1200px]">
+                  <div className="w-full h-full flex items-center justify-center overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200, borderRadius: '14px' }}>
+                    <LottieAnimation section="section3" style={{ width: '100%', height: '100%' }} />
+                  </div>
                 </div>
               ) : activeTab === 'status' ? (
                 <div className="max-w-[800px] mx-auto mt-16 h-[420px] overflow-auto">
