@@ -195,72 +195,9 @@ function App() {
                   </div>
                 </div>
               ) : activeTab === 'status' ? (
-                <div className="max-w-[800px] mx-auto mt-16 h-[420px] overflow-auto">
-                  <div className="overflow-hidden rounded-[12px] border border-black" style={{ borderWidth: '0.8px' }}>
-                    <table className="w-full border-collapse bg-white">
-                      <thead className="bg-gray-50">
-                        <tr>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">Kierowca</th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">Pojazd</th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">Lokalizacja</th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">Data</th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">CMR</th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">Dokument</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-200">
-                        <tr className="hover:bg-gray-50">
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Feliks Solovev</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">GPS1</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">IV Obwodnica, Kryspinów, Powiat krakowski, Polska, 32-060</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">09.05.2025 10:51</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
-                          <td className="px-4 py-3 text-left">
-                            <img src={images.cmr1} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Feliks Solovev</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">GPS1</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">IV Obwodnica, Kryspinów, Powiat krakowski, Polska, 32-060</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 14:39</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
-                          <td className="px-4 py-3 text-left">
-                            <img src={images.cmr2} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Marek Nowak</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">GPS3</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Aleja Pokoju 18, Kraków, Polska, 31-564</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 12:15</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
-                          <td className="px-4 py-3 text-left">
-                            <img src={images.cmr3} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Jan Kowalski</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">GPS2</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Zakopiańska 244, Kraków, Polska, 30-435</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 09:30</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
-                          <td className="px-4 py-3 text-left">
-                            <img src={images.cmr4} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Piotr Zieliński</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">GPS4</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Wielicka 28B, Kraków, Polska, 30-552</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">07.05.2025 08:45</td>
-                          <td className="px-4 py-3 text-sm text-left text-gray-900">Tak</td>
-                          <td className="px-4 py-3 text-left">
-                            <img src={images.cmr5} alt="CMR Document" className="h-8 w-6 object-cover rounded" />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                <div style={{ marginTop: '50px' }} className="flex justify-center items-center mx-auto w-full max-w-6xl min-h-[640px] max-h-[1200px]">
+                  <div className="w-full h-full flex items-center justify-center bg-white overflow-hidden" style={{ maxWidth: 1200, maxHeight: 1200, borderRadius: '14px' }}>
+                    <LottieAnimation section="section4" style={{ width: '100%', height: '100%' }} />
                   </div>
                 </div>
               ) : (
