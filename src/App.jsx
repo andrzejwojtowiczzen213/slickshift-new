@@ -170,7 +170,7 @@ function App() {
                     </TabsTrigger>
                     <TabsTrigger value="status" className="flex items-center gap-2 whitespace-nowrap h-10 text-muted-foreground data-[state=active]:text-foreground">
                       <span className="material-symbols-outlined text-[20px]">description</span>
-                      Zarządzanie CMR
+                      Asystent AI
                     </TabsTrigger>
                   </TabsList>
                 </Tabs>
